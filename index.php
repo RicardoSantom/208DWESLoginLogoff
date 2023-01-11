@@ -16,7 +16,7 @@
         <?php
         echo '<h1>Estado inicial LoginLogoff</h1>';
         echo '<h2>Aplicación multicapa y orientada a objetos</h2>';
-        echo '<h3>Autor: Ricardo Santiago Tomé</h3>';
+        echo '<h3>Autor: Ricardo Santiago Tomé©</h3>';
         ?>
     </body>
 </html>
