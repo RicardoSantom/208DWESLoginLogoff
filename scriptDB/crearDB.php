@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <!--
             Autor: Ricardo Santiago Tomé.
-            Utilidad: Este programa consiste en construir una pagina web que cargue registros en la tabla Departamento desde un array departamentosnuevos
-                      utilizando una consulta preparada.
-            Fecha-última-revisión: 22-11-2022.
+            Utilidad: Creación de tablas en base de datos
+            Fecha-última-revisión: 11/01/2023.
     -->
     <head>
         <meta charset="UTF-8">
@@ -20,7 +19,7 @@
     </head>
     <body>
         <header>
-            <h1>Scripts proyecto tema 5</h1>
+            <h1>Scripts proyecto LoginLogoff</h1>
             <h2>Script creación DB + usuario</h2>
         </header>
         <main>
@@ -31,14 +30,18 @@
                 require_once '../config/confDB.php';
                 try {
                     //Establecimiento de la conexión 
-                    $DB208DWESLoginLogoffTema5 = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
+                    $DB208DWESLoginLogoff = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
                     $creacion = $DB208DWESLoginLogoff->prepare(<<<SQL
+                      create table T02_Departamento(T02_CodDepartamento char(3) primary key,
+                        T02_DescDepartamento varchar(255) not null, T02_FechaCreacionDepartamento DATETIME not null,
+                        T02_VolumenNegocio float not null,T02_FechaBajaDepartamento DATETIME null)
+                        engine=Innodb;
                       create table if not exists T01_Usuario(
                         T01_CodUsuario varchar(8) primary key not null,
                         T01_Password varchar(255) not null,
                         T01_DescUsuario varchar(255) not null,
                         T01_NumConexiones int not null default 1,
-                        T01_FechaHoraUltimaConexion int not null,
+                        T01_FechaHoraUltimaConexion DATETIME not null,
                         T01_Perfil enum('administrador','usuario') default 'usuario',
                         T01_ImagenUsuario MEDIUMBLOB null
                     )engine=Innodb;
@@ -60,16 +63,16 @@
                     unset($mydb);
                 }
                 ?>
-                <a href="../indexProyectoTema4.php"><img src="../webroot/volver.png" alt="volver" class="volver2" /></a>
+                <a href="https://daw208.ieslossauces.es/index.php">VOLVER</a>
             </article>
         </main>
         <footer>
-            <p>2022-23  IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé</a> © Todos los derechos reservados</p>
+            <p>2022-23  IES LOS SAUCES. <a href="https://daw208.ieslossauces.es/index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé</a> © Todos los derechos reservados</p>
             <a href="https://github.com/RicardoSantom" target="blank" id="github" title="RicardoSantom en GitHub">
             </a>
             <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim" target="_blank"></a>
-            <a href="../../doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
-            <a href="../indexProyectoTema5.php" id="enlaceSecundario" title="Enlace a Index Proyecto Tema5">Index Proyecto Tema5</a>
+            <a href="https://daw208.ieslossauces.es/doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
+            <a href="https://daw208.ieslossauces.es/208DWESLoginLogoff/index.php" id="enlaceSecundario" title="Enlace a Index">Index</a>
         </footer>
     </body>
 </html>

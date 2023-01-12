@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <!--
             Autor: Ricardo Santiago Tomé.
-            Utilidad: Este programa consiste en construir una pagina web que cargue registros en la tabla Departamento desde un array departamentosnuevos
-                      utilizando una consulta preparada.
-            Fecha-última-revisión: 22-11-2022.
+            Utilidad: Borrado tablas de base de datos.
+            Fecha-última-revisión: 11/01/2023.
     -->
     <head>
         <meta charset="UTF-8">
@@ -20,7 +19,7 @@
     </head>
     <body>
         <header>
-            <h1>Scripts proyecto tema 5</h1>
+            <h1>Scripts proyecto LoginLogoff</h1>
             <h2>Script borrado</h2>
         </header>
         <main>
@@ -31,9 +30,9 @@
                 require_once '../config/confDB.php';
                 try {
                     //Establecimiento de la conexión 
-                    $DB208DWESLoginLogoffTema5 = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
-                    $borrado = $DB208DWESLoginLogoffTema5->prepare(<<<SQL
-                    drop table if exists T02_Departamento,T01_Usuario;
+                    $DB208DWESLoginLogoff = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
+                    $borrado = $DB208DWESLoginLogoff->prepare(<<<SQL
+                    drop table if exists T02_Departamento;
                     SQL);
                     $borrado->execute(); //Ejecuto la consulta
                     if ($borrado) {
@@ -48,10 +47,10 @@
                     echo "<span style='color: red;'>Código del error: </span>" . $errorExcep; //Mostramos el código de la excepción
                 } finally {
                     // Cierre de la conexión.
-                    unset($DB208DWESLoginLogoffTema5);
+                    unset($DB208DWESLoginLogoff);
                 }
                 ?>
-                <a href="../indexProyectoTema4.php">VOLVER</a>
+                <a href="https://daw208.ieslossauces.es/208DWESLoginLogoff/index.php">VOLVER</a>
             </article>
         </main>
         <footer>
@@ -59,8 +58,8 @@
             <a href="https://github.com/RicardoSantom" target="blank" id="github" title="RicardoSantom en GitHub">
             </a>
             <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim" target="_blank"></a>
-            <a href="../../doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
-            <a href="../indexProyectoTema5.php" id="enlaceSecundario" title="Enlace a Index Proyecto Tema5">Index Proyecto Tema5</a>
+            <a href="https://daw208.ieslossauces.es/doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
+            <a href="https://daw208.ieslossauces.es/208DWESLoginLogoff/index.php" id="enlaceSecundario" title="Enlace a Index">Index</a>
         </footer>
     </body>
 </html>

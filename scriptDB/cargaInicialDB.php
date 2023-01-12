@@ -2,8 +2,7 @@
 <html lang="en">
     <!--
             Autor: Ricardo Santiago Tomé.
-            Utilidad: Este programa consiste en construir una pagina web que cargue registros en la tabla Departamento desde un array departamentosnuevos
-                      utilizando una consulta preparada.
+            Utilidad: Inserción de datos en tablas.
             Fecha-última-revisión: 22-11-2022.
     -->
     <head>
@@ -33,30 +32,29 @@
                     //Establecimiento de la conexión 
                     $DB208DWESLoginLogoff = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
                     $insercion = $DB208DWESLoginLogoff->prepare(<<<SQL
-                    use DAW208DBProyectoTema5;
                     insert into T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio) 
-                    values("DAW","Despliegue Aplcaciones Web",1668384061,2000);
+                    values("DAW","Despliegue Aplcaciones Web",now(),2000);
                     insert into T02_Departamento  (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio) 
-                    values("DWC","Desarrollo Web Entorno Cliente",1668384061,1000);
+                    values("DWC","Desarrollo Web Entorno Cliente",now(),1000);
                     insert into T02_Departamento  (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio)
-                    values("DWS","Desarrollo Web Entorno Servidor",1668384061,3000);
+                    values("DWS","Desarrollo Web Entorno Servidor",now(),3000);
                     insert into T02_Departamento  (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio)
-                    values("DIW","Diseño Interfaces Web",1668384061,4000);
+                    values("DIW","Diseño Interfaces Web",now(),4000);
                     insert into T02_Departamento  (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio)
-                    values("EIE","Empresa e Iniciativa Emprendedora",1668384061,2);
+                    values("EIE","Empresa e Iniciativa Emprendedora",now(),2);
                     insert into T01_Usuario(T01_CodUsuario,T01_Password,T01_DescUsuario,T01_FechaHoraUltimaConexion) values
-                    ('heraclio',sha2(concat('heraclio','paso'),256),'Heraclio', FROM_UNIXTIME('1609380121')),
-                    ('alberto',sha2(concat('alberto','paso'),256),'Alberto', FROM_UNIXTIME('1609380121')),
-                    ('amor',sha2(concat('amor','paso'),256),'Amor', FROM_UNIXTIME('1609380121')),
-                    ('antonio',sha2(concat('antonio','paso'),256),'Antonio', FROM_UNIXTIME('1609380121')),
-                    ('carmen',sha2(concat('carmen','paso'),256),'Carmen',FROM_UNIXTIME('1609380121')),
-                    ('ricardo',sha2(concat('ricardo','paso'),256),'Ricardo', FROM_UNIXTIME('1609380121')),
-                    ('david',sha2(concat('david','paso'),256),'David', FROM_UNIXTIME('1609380121')),
-                    ('luis',sha2(concat('luis','paso'),256),'Luis', FROM_UNIXTIME('1609380121')),
-                    ('otalvaro',sha2(concat('otalvaro','paso'),256),'Alejandro', FROM_UNIXTIME('1609380121')),
-                    ('josue',sha2(concat('josue','paso'),256),'Josue', FROM_UNIXTIME('1609380121')),
-                    ('manuel',sha2(concat('manuel','paso'),256),'Manuel', FROM_UNIXTIME('1609380121')),
-                    ('admin',sha2(concat('admin','paso'),256),'Administrador', FROM_UNIXTIME('1609380121'));
+                    ('heraclio',sha2(concat('heraclio','paso'),256),'Heraclio', now()),
+                    ('alberto',sha2(concat('alberto','paso'),256),'Alberto', now()),
+                    ('amor',sha2(concat('amor','paso'),256),'Amor', now()),
+                    ('antonio',sha2(concat('antonio','paso'),256),'Antonio', now()),
+                    ('carmen',sha2(concat('carmen','paso'),256),'Carmen',now()),
+                    ('ricardo',sha2(concat('ricardo','paso'),256),'Ricardo', now()),
+                    ('david',sha2(concat('david','paso'),256),'David', now()),
+                    ('luis',sha2(concat('luis','paso'),256),'Luis', now()),
+                    ('otalvaro',sha2(concat('otalvaro','paso'),256),'Alejandro', now()),
+                    ('josue',sha2(concat('josue','paso'),256),'Josue', now()),
+                    ('manuel',sha2(concat('manuel','paso'),256),'Manuel', now()),
+                    ('admin',sha2(concat('admin','paso'),256),'Administrador', now());
                 SQL);
                     $insercion->execute(); //Ejecuto la consulta
                     if ($insercion) {
@@ -76,16 +74,16 @@
                     unset($DB208DWESLoginLogoff);
                 }
                 ?>
-                <a href="../indexProyectoTema4.php"><img src="../webroot/volver.png" alt="volver" class="volver2" /></a>
+                <a href="../index.php">VOLVER</a>
             </article>
         </main>
         <footer>
-            <p>2022-23  IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé</a> © Todos los derechos reservados</p>
+            <p>2022-23  IES LOS SAUCES. <a href="https://daw208.ieslossauces.es/index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé</a> © Todos los derechos reservados</p>
             <a href="https://github.com/RicardoSantom" target="blank" id="github" title="RicardoSantom en GitHub">
             </a>
             <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim" target="_blank"></a>
-            <a href="../../doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
-            <a href="../indexProyectoTema5.php" id="enlaceSecundario" title="Enlace a Index Proyecto Tema5">Index Proyecto Tema5</a>
+            <a href="https://daw208.ieslossauces.es/doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
+            <a href="https://daw208.ieslossauces.es/208DWESLoginLogoff/index.php" id="enlaceSecundario" title="Enlace a Index">Index LoginLogoff</a>
         </footer>
     </body>
 </html>
