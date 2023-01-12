@@ -11,8 +11,8 @@ create database if not exists DB208DWESLoginLogoff;
 use DB208DWESLoginLogoff;
 /*Cración tabla T02_Departamento*/
 create table T02_Departamento(T02_CodDepartamento char(3) primary key,
-    T02_DescDepartamento varchar(255) not null, T02_FechaCreacionDepartamento int not null,
-    T02_VolumenNegocio float not null,T02_FechaBajaDepartamento int null)
+    T02_DescDepartamento varchar(255) not null, T02_FechaCreacionDepartamento datetime not null,
+    T02_VolumenNegocio float not null,T02_FechaBajaDepartamento datetime null)
     engine=Innodb;
 /*Creación de la tabla T01_Usuario.*/
 create table if not exists T01_Usuario(
@@ -27,6 +27,6 @@ create table if not exists T01_Usuario(
 /*Creación usuario para conectarse desde cualquier ip y adjudicación de password*/
 create user if not exists 'usuario208DWESLoginLogoff'@'%' identified by 'paso';
 /*Dotación de todos los privilegios para el usuario crado en esta base de datos*/
-grant all privileges on DB208DWESLoginLogoffTema5.* to 'usuario208DWESLoginLogoff'@'%';
+grant all privileges on DB208DWESLoginLogoff.* to 'usuario208DWESLoginLogoff'@'%';
 /*Recarga de privilegios*/
 FLUSH PRIVILEGES;
