@@ -32,7 +32,7 @@
                     //Establecimiento de la conexión 
                     $DB208DWESLoginLogoff = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
                     $borrado = $DB208DWESLoginLogoff->prepare(<<<SQL
-                    drop table if exists T02_Departamento;
+                    drop table if exists T02_Departamento,T01_Usuario;
                     SQL);
                     $borrado->execute(); //Ejecuto la consulta
                     if ($borrado) {

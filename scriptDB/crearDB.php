@@ -32,19 +32,19 @@
                     //Establecimiento de la conexión 
                     $DB208DWESLoginLogoff = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
                     $creacion = $DB208DWESLoginLogoff->prepare(<<<SQL
-                      create table T02_Departamento(T02_CodDepartamento char(3) primary key,
-                        T02_DescDepartamento varchar(255) not null, T02_FechaCreacionDepartamento DATETIME not null,
-                        T02_VolumenNegocio float not null,T02_FechaBajaDepartamento DATETIME null)
-                        engine=Innodb;
-                      create table if not exists T01_Usuario(
-                        T01_CodUsuario varchar(8) primary key not null,
-                        T01_Password varchar(255) not null,
-                        T01_DescUsuario varchar(255) not null,
-                        T01_NumConexiones int not null default 1,
-                        T01_FechaHoraUltimaConexion DATETIME not null,
-                        T01_Perfil enum('administrador','usuario') default 'usuario',
-                        T01_ImagenUsuario MEDIUMBLOB null
-                    )engine=Innodb;
+                            create table T02_Departamento(T02_CodDepartamento char(3) primary key,
+                            T02_DescDepartamento varchar(255) not null, T02_FechaCreacionDepartamento DATETIME not null,
+                            T02_VolumenNegocio float not null,T02_FechaBajaDepartamento DATETIME null)
+                            engine=Innodb;
+                            create table if not exists T01_Usuario(
+                            T01_CodUsuario varchar(8) primary key not null,
+                            T01_Password varchar(255) not null,
+                            T01_DescUsuario varchar(255) not null,
+                            T01_NumConexiones int not null default 1,
+                            T01_FechaHoraUltimaConexion DATETIME not null,
+                            T01_Perfil enum('administrador','usuario') default 'usuario',
+                            T01_ImagenUsuario MEDIUMBLOB null
+                            )engine=Innodb;
                             SQL);
                     $creacion->execute(); //Ejecuto la consulta
                     if ($creacion) {
