@@ -16,8 +16,9 @@
         <h1>Estado inicial LoginLogoff</h1>
         <h2>Aplicación multicapa y orientada a objetos</h2>
         <h3>Autor: Ricardo Santiago Tomé©</h3>
-        <div class="slider-container">  
-             <div  id="divPrueba"></div>
+        <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>
+        <div class="slider-container">
+            <div  id="divPrueba"><label>Ficheros LoginLogoff Multicapa POO</label></div>
             <img
                 class="slider-item"
                 src="https://images.unsplash.com/photo-1580501170888-80668882ca0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
@@ -28,7 +29,6 @@
                 />
         </div>  
         <br>
-        <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>
         <footer>
             <p>2022-23  IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé</a> © Todos los derechos reservados</p>
             <a href="https://github.com/RicardoSantom/208DWESLoginLogoff" target="blank" alt="Enlace a Github" id="github" title="RicardoSantom en GitHub">GITHUB</a>
