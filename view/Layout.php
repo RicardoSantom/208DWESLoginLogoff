@@ -16,14 +16,25 @@
         <h1>Estado inicial LoginLogoff</h1>
         <h2>Aplicación multicapa y orientada a objetos</h2>
         <h3>Autor: Ricardo Santiago Tomé©</h3>
+        <div class="slider-container">  
+             <div  id="divPrueba"></div>
+            <img
+                class="slider-item"
+                src="https://images.unsplash.com/photo-1580501170888-80668882ca0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                />
+            <img
+                class="slider-item"
+                src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                />
+        </div>  
+        <br>
         <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>
         <footer>
             <p>2022-23  IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé</a> © Todos los derechos reservados</p>
-            <a href="https://github.com/RicardoSantom/208DWESLoginLogoff" target="blank" id="github" title="RicardoSantom en GitHub">
-            </a>
-            <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim" target="_blank"></a>
-            <a href="http://daw208.sauces.local/doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
-            <a href="http://daw208.sauces.local/208DWESproyectoDWES/index.php" id="enlaceSecundario" title="Enlace a Index DWES">Index DWES</a>
+            <a href="https://github.com/RicardoSantom/208DWESLoginLogoff" target="blank" alt="Enlace a Github" id="github" title="RicardoSantom en GitHub">GITHUB</a>
+            <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim" alt="Enlace Linkedin" target="_blank">LINKEDIN</a>
+            <a href="http://daw208.ieslossauces.es/doc/curriculumRicardo.pdf" class="material-icons" title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
+            <a href="http://daw208.ieslossauces.es/208DWESproyectoDWES/index.php" id="enlaceSecundario"  title="Enlace a Index DWES">Index DWES</a>
         </footer>
     </body>
 </html>

@@ -76,7 +76,7 @@
                     ('otalvaro',sha2(concat('otalvaro','paso'),256),'Alejandro', now()),
                     ('josue',sha2(concat('josue','paso'),256),'Josue', now()),
                     ('manuel',sha2(concat('manuel','paso'),256),'Manuel', now());
-                             insert into T01_Usuario(T01_CodUsuario,T01_Password,T01_DescUsuario,T01_FechaHoraUltimaConexion,T01_Perfil) values
+                    insert into T01_Usuario(T01_CodUsuario,T01_Password,T01_DescUsuario,T01_FechaHoraUltimaConexion,T01_Perfil) values
                     ('admin',sha2(concat('admin','paso'),256),'Administrador', now(),'administrador');
                 SQL2);
                     $insercion2->execute(); //Ejecuto la consulta
