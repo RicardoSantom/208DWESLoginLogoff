@@ -8,7 +8,7 @@
     $_SESSION['paginaAnterior'] = 'inicioPublico';
     
     if(isset($_REQUEST['volver'])){
-        header('Location: http://daw208.ieslossauces.es//208DWESproyectoDWES/index.php');
+        header('Location: ../../../208DWESproyectoDWES/index.php');
         exit;
     }
     

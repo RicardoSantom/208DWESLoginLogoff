@@ -25,16 +25,16 @@ create table if not exists T01_Usuario(
     T01_ImagenUsuario MEDIUMBLOB null
 )engine=Innodb;
 /*Creación usuario dentro de la propia base de datos para conectarse desde cualquier ip y adjudicación de password*/
-create user if not exists 'usuario208DWESLoginLogoff'@'%' identified by 'paso';
+create user if not exists 'user208DWESLoginLogoff'@'%' identified by 'paso';
 /*Dotación de todos los privilegios para el usuario crado en esta base de datos*/
-grant all privileges on DB208DWESLoginLogoff.* to 'usuario208DWESLoginLogoff'@'%';
+grant all privileges on DB208DWESLoginLogoff.* to 'user208DWESLoginLogoff'@'%';
 /*Recarga de privilegios*/
 FLUSH PRIVILEGES;
 /*Puesta en uso de mysql para acceder con usuario208DWESLoginLogoff*/
 use mysql;
-create user if not exists 'usuario208DWESLoginLogoff'@'%' identified by 'paso';
+create user if not exists 'user208DWESLoginLogoff'@'%' identified by 'paso';
 /*Dotación de todos los privilegios para el usuario crado en esta base de datos*/
-grant all privileges on DB208DWESLoginLogoff.* to 'usuario208DWESLoginLogoff'@'%';
+grant all privileges on DB208DWESLoginLogoff.* to 'user208DWESLoginLogoff'@'%';
 /*Recarga de privilegios*/
 FLUSH PRIVILEGES;
 /*Puesta en uso de mysql 

@@ -26,9 +26,9 @@ $aControladores = [
     ];
     $aVistas = [
         "layout" => "view/Layout.php",
+        "inicioprivado" => "view/vInicioPrivado.php",
         "login" => "view/vLogin.php",
         "iniciopublico" => "view/vInicioPublico.php",
-        "inicioprivado" => "view/vInicioPrivado.php",
         "wip" => "view/vWIP.php",
         "error" => "view/vError.php",
         "detalle" => "view/vDetalle.php",

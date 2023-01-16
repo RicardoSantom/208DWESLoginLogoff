@@ -8,7 +8,7 @@
  * constantes con valores para conexión a base de datos
  */
 //Conexión en curso.
-define('DSN', 'mysql:host=192.168.1.77;dbname=DB208DWESLoginLogoff');
+define('DSN', 'mysql:host=192.168.20.19;dbname=DB208DWESLoginLogoff');
 define('NOMBREUSUARIO', 'usuario208DWESLoginLogoff');
 define('PASSWORD', 'paso');
 /*
@@ -20,7 +20,7 @@ define('PASSWORD', 'paso');
 /*
  * Declaración de variables para desarrollo sauces.local 
  * define('DSN', 'mysql:host=192.168.20.19;dbname=DB208DWESLoginLogoff');
- * define('NOMBREUSUARIO', 'user208DWESLoginLogoff');
+ * define('NOMBREUSUARIO', 'usuario208DWESLoginLogoff');
  * define('PASSWORD', 'paso');
  */
 /*
