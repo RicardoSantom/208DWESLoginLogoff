@@ -1,25 +1,33 @@
-.slider-container {
-  display: flex;
-  width: 100%;
-  height: 65vh;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  background: antiquewhite;
-  overflow: hidden;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato-Regular';
 }
-.slider-container img,.slider-container div {
-  flex: 0 0 100%;
-  width: 100%;
-  object-fit: cover;
-  /* Vamos a añadir esto 👇 */
-  scroll-snap-align: center;
+body{
+    background-color: #fff;
+    font-family: 'LatoRegular';
+    width: 100vw;
+    height: 100%;
 }
-#divPrueba{
-    background: url(../../webroot/images/FicherosLoginLogoffMulticapaPOO.png) no-repeat;
-    height: 700px;
-    background-size: contain;
-    background-position-x: center;
-    background-position-y: center;
+#headerInicioPublico{
+    text-align: center;
+    width: 100%;
+    height: 3.5rem;
+}
+#headerInicioPublico p{
+    background-color: #344079;
+    font-family: 'LatoBold';
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    font-size: 13px;
+}
+#headerInicioPublico h1{
+    background-color: #fbfaf8;
+    font-family: 'LatoItalic';
+    font-weight: bold;
+    font-size: 30px;
 }
 label{
     text-align: center;
@@ -27,4 +35,246 @@ label{
     font-size: 34px;
     font-weight: bold;
     color:  #003333;
+}
+nav{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 60%;
+    background: white;
+    opacity: 1;
+}
+#labelInicioPublico{
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    display: block;
+    /*background: gray;*/
+    border-radius: 5px;
+    top: 25px;
+    left: 18px;
+}
+#labelInicioPublico::before{
+    content: "";
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #344079;
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    box-shadow: 0 8px 0 #344079,
+        0 16px 0 #344079;
+}
+input{
+    display: none;
+    border: none;
+}
+.menu{
+    list-style: none;
+    width: 100px;
+    position: relative;
+    left: -100%;
+    transition: all 0.5s ease;
+}
+#fieldsetInicioPublico{
+    border: none;
+    flex-direction: column;
+    display: flex;
+}
+#iniciarsesion,#registrarse,#salir{
+    display: inline-flex;
+    width: 100%;
+    line-height: 34px;
+    text-decoration: none;
+    color: #344079;
+    background-color: #fff;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    z-index: 10;
+    font-family: 'LatoRegular';
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px;
+}
+input:checked ~ ul{
+    left: 0;
+    background: white;
+    z-index: 100;
+}
+.slide {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    top: -100px;
+}
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: calc( 800px + 3em);
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.slide-open:checked + .slide-item {
+    position: static;
+    opacity: 100;
+}
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+.slide-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+img{
+    background-position-x: center;
+    background-position-y: center;
+}
+.slide-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+.slide-control.prev {
+    left: 2%;
+}
+.slide-control.next {
+    right: 2%;
+}
+.slide-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+#slide-1:checked ~ .control-1,
+#slide-2:checked ~ .control-2,
+#slide-3:checked ~ .control-3 {
+    display: block;
+}
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+.slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.slide-circulo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+.slide-circulo:hover {
+    color: #aaaaaa;
+}
+#slide-1:checked ~ .control-1 ~ .slide-indicador
+li:nth-child(1) .slide-circulo,
+#slide-2:checked ~ .control-2 ~ .slide-indicador
+li:nth-child(2) .slide-circulo,
+#slide-3:checked ~ .control-3 ~ .slide-indicador
+li:nth-child(3) .slide-circulo {
+    color: #428bca;
+}
+#enlaceSecundario,#enlacePrincipal {
+    color: #666666;
+    font-size: 20px;
+}
+#github,#linkedin,#curriculum{
+    clear: both;
+    text-decoration: none;
+}
+#github:before{
+    font-family: 'Fontawesome';
+    content:'\f09b';
+    background-color:#FFC9B5;
+    font-size: 2em;
+    border-radius: 50%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#linkedin:before{
+    color: #FFC9B5;
+    font-family: 'FontaWesome';
+    content: '\f08c';
+    font-size: 2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#curriculum:before{
+    color: #FFC9B5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#linkedin{
+    color: #FFC9B5;
+}
+#curriculum span{
+    color: #FFC9B5;
+    font-size: 30px;
+    padding-top: 10px;
+}
+#github,#linkedin{
+    padding-top: 10px;
+}
+footer p{
+    padding-top: 15px;
+    font-size: 20px;
+}
+#ganso{
+    font-size: 24px;
+    color: #666666;
+}
+footer {
+    clear: both;
+    height: 90px;
+    position: fixed;
+    justify-content: space-evenly;
+    display: flex;
+    float: left;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #516D99;
+    color: #F5FEFF;
+    opacity: 0.9;
+    /*background: rgb(2,0,40);
+    background: linear-gradient(90deg, rgba(2,0,40,1) 0%, rgba(81,109,153,1) 100%, rgba(251,250,248,1) 100%);*/
+    align-content: stretch;
+    flex-direction: row;
+    align-items: center;
+    z-index: 20;
+    color:#666666;
+    background-color: white;
 }

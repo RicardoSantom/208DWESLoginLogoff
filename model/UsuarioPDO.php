@@ -1,10 +1,4 @@
 <?php
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPClass.php to edit this template
- */
-
 /**
  * Description of UsuarioPDO
  *
@@ -23,7 +17,7 @@ class UsuarioPDO implements UsuarioDB {
         $oDatos = $oResultado->fetchObject();
 
         if ($oDatos) {
-            return new Usuario($oDatos->T01_CodUsuario, $oDatos->T01_Password, $oDatos->T01_DescUsuario, $oDatos->T01_NumConexiones, $oDatos->T01_FechaHoraUltimaConexion, null, $oDatos->T01_Perfil, $oDatos->T01_ImagenUsuario);
+            return new Usuario($oDatos->T01_CodUsuario, $oDatos->T01_Password, $oDatos->T01_DescUsuario, $oDatos->T01_NumConexiones, $oDatos->T01_FechaHoraUltimaConexion, null, $oDatos->T01_Perfil);
         }
         /*
          * Si no existe, devuelve false.

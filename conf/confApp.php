@@ -1,11 +1,14 @@
 <?php
 require_once 'core/validacionFormularios.php';
-//require_once 'model/DB.php';
-//require_once 'model/UsuarioDB.php';
-//require_once 'model/Usuario.php';
-//require_once 'model/UsuarioPDO.php';
-//require_once 'model/DBPDO.php';
+require_once 'model/DB.php';
+require_once 'model/UsuarioDB.php';
+require_once 'model/Usuario.php';
+require_once 'model/UsuarioPDO.php';
+require_once 'model/DBPDO.php';
 //require_once 'model/AppError.php';
+
+// Constantes para la conexión a la base de datos.
+require_once 'conf/confDBPDO.php';
 
 define("OBLIGATORIO",1);    
 

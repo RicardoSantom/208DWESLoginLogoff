@@ -11,6 +11,6 @@
  */
 interface UsuarioDB {
     //put your code here
-    public function validarUsuario($codUsuario,$password);
+    public static function validarUsuario($codUsuario,$password);
     
 }

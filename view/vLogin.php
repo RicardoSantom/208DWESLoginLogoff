@@ -1,28 +1,27 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>LoginLogoff Iniciar Sesión</title>
-        <link href="webroot/css/estilos.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <main>
-            <h2 class="titulo">Iniciar sesión</h2>
-            <form action="index.php" method="post">
-                <table>
-                    <tr>
-                        <td><label for="usuario">Nombre de usuario: </label></td>
-                        <td><input id="usuario" type="text" name="usuario"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="password">Contraseña: </label></td>
-                        <td><input id="password" type="password" name="password"></td>
-                    </tr>
-                </table>
-                <button type="submit" name="login" class="boton">Iniciar sesion</button>
-                <!--<button type="submit" name="registro" class="boton">Registrarse</button>-->
-                <button type="submit" name="volver" class="boton">Volver</button>
-            </form>
-        </main>
-    </body>
-</html>
+<header>
+    <h1>Aplicación LoginLogoff</h1>
+    <h2>login</h2>
+</header>
+<article>
+    <h3>Iniciar Sesión</h3>
+    <form  method="post">
+        <fieldset>
+            <label for="usuario">Usuario:</label>
+            <input type="text" name="usuario" class="entradadatos"/>
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="entradadatos" />
+            <div class="inicarSesionLogin"><input type="submit" id="login" value="Login" name="login"></div>
+            <div class="inicarSesionLogin"><input type="submit" id="volver" value="Volver" name="volver"></div>
+            <!--<select name="listaDesplegable" value="<?php
+            /* if (isset($_REQUEST['listaDesplegable'])) {
+              echo $_REQUEST['listaDesplegable'];
+              } */
+            ?>"
+                <option value="null">Elija una opcion :</option>
+                <option value="es">Español</option>
+                <option value="pt">Portugués</option>
+                <option value="en">Inglés</option>
+            </select>>-->
+        </fieldset>
+    </form>
+</article>

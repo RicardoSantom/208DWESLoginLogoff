@@ -28,7 +28,7 @@
     if(isset($_REQUEST['login'])){    
         
         if (validacionFormularios::comprobarAlfaNumerico($_REQUEST['usuario'], 8, 4, 1) 
-                || validacionFormularios::comprobarAlfaNumerico($_REQUEST['password'], 8, 4, 1)) {
+                && validacionFormularios::comprobarAlfaNumerico($_REQUEST['password'], 8, 4, 1)) {
             $bEntradaOK = false;
         }
         else{
@@ -47,10 +47,8 @@
             $aRespuestas['usuario'] = $_REQUEST['usuario'];
             $aRespuestas['password'] = $_REQUEST['password'];
         
-            if(UsuarioPDO::registrarUltimaConexion($oUsuarioValido)){
-                $_SESSION['usuario208DWESLoginLogoff'] = $oUsuarioValido;
                 $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-            }
+            
             header('Location: index.php');
             exit;
     }

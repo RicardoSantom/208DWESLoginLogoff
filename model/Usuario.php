@@ -30,7 +30,7 @@ class Usuario {
         $this->fechaHoraUltimaConexionAnterior = $fechaHoraUltimaConexionAnterior;
         $this->perfil = $perfil;
     }
-    
+
     public function getCodUsuario() {
         return $this->codUsuario;
     }
@@ -86,6 +86,5 @@ class Usuario {
     public function setPerfil($perfil): void {
         $this->perfil = $perfil;
     }
-
 
 }

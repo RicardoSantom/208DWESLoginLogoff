@@ -10,5 +10,5 @@
  * @author daw2
  */
 interface DB {
-    public function ejecutarConsulta($sentenciaSQL,$parametros);
+    public static function ejecutarConsulta($sentenciaSQL,$parametros);
 }

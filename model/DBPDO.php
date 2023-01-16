@@ -1,34 +1,35 @@
 <?php
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPClass.php to edit this template
- */
-
 /**
  * Description of DBPDO
- *
- * @author daw2
+ * Función en la que se implementa el método abstracto declarado en la interface DB *
+ * @author Ricardo Santiago Tomé - RicardoSantom en Github <https://github.com/RicardoSantom>
  */
 class DBPDO implements DB {
-
-    //put your code here
+    /**
+     * @author 
+     * @return Object $oResultado Guarda el resultado de la ejecución y resultado
+     * recogio por una sentencia mysql.
+     * @param String $sentenciaSQL Sentencia en lenguaje SQL
+     * @param  $parametros  Lista de parámetros para sacar datos de la DB
+     */
     public static function ejecutarConsulta($sentenciaSQL, $parametros=null) {
         try {
             // Conexión con la base de datos.
             $DB208DWESLoginLogoff = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
-
-            // Preparación y ejecución de la consulta con sus parámetros.
-            $oResultado = $oDB->prepare($sentenciaSQL);
+            // Preparación de la consulta.
+            $oResultado = $DB208DWESLoginLogoff->prepare($sentenciaSQL);
+            //Ejecución de consulta con parámetros facilitados a la función.
             $oResultado->execute($parametros);
-
+            //Devolución del resultado de la consulta
             return $oResultado;
-        } catch (PDOException $exception) {
+        } catch (PDOException $excepcion) {
+            //Si hay errores nos informa con un mensaje
             echo $excepcion->getMessage();
-            $_SESSION['paginaEnCurso'] = 'error';
+            //Y nos devuelve al index
             header('Location: index.php');
             exit;
         } finally {
+            //Cerrado base de datos
             unset($DB208DWESLoginLogoff);
         }
     }
