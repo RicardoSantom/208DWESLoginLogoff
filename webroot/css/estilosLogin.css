@@ -1,0 +1,138 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 17 ene 2023, 7:00:06
+    Author     : desar
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato-Regular';
+}
+body{
+    background-color: #fff;
+    font-family: 'LatoRegular';
+    width: 100vw;
+    height: 100%;
+}#headerId{
+    text-align: center;
+    width: 100%;
+    height: 3.5rem;
+}#haderID p{
+    background-color: #344079;
+    font-family: 'LatoBold';
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    font-size: 13px;
+}#headerId h1{
+    background-color: #fbfaf8;
+    font-family: 'LatoItalic';
+    font-weight: bold;
+    font-size: 30px;
+}
+divNavContenedor{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+#hbger{
+    display: none;
+}
+label{
+    text-align: center;
+    font-family: monospace;
+    font-size: 34px;
+    font-weight: bold;
+    color:  #003333;
+}
+.divNav{
+    width: 20%;
+    position: relative;
+    overflow: hidden;
+    height: 60%;
+    background: white;
+    opacity: 1;
+}
+#labelInicioPublico{
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    display: block;
+    /*background: gray;*/
+    border-radius: 5px;
+    top: 25px;
+    left: 18px;
+}
+#labelInicioPublico::before{
+    content: "";
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #344079;
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    box-shadow: 0 8px 0 #344079,
+        0 16px 0 #344079;
+}
+menu{
+    list-style: none;
+    width: 300px;
+    height: 600px;
+    position: relative;
+    left: -100%;
+    transition: all 0.5s ease;
+}
+#formLogin fieldset{
+     display: flex;
+    height: 300px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+}
+.divRegistroCancelar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.divRegistroCancelar input{
+    width: 500px;
+    height: 30px;
+}
+#password,.inicarSesionLogin input:nth-child(1){
+    margin-top: 20px;
+}
+#login,#registrarse{
+    background-color: #344079;
+    color: white;
+    font-weight: bolder;
+    font-size: 22px;
+}
+.divRegistroCancelar h2{
+    padding: 10px;
+    width: 80%;
+    margin: 20px auto;
+    border-bottom: dashed 1px #00295A;
+    opacity: 1;
+    font-size: 22px !important;
+    font-weight: 300 !important;                    
+}
+#divIdioma{
+    background-color: #cccccc;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0000cc;
+}

@@ -1,55 +1,72 @@
 <?php
 
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
- if(isset($_REQUEST['cancelar'])){
-        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; 
-        $_SESSION['paginaEnCurso'] = 'inicioPublico';
-        header('Location: index.php');
-        exit;
-    }
-    
-    /*if(isset($_REQUEST['registro'])){
-        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; 
-        $_SESSION['paginaEnCurso'] = 'registro';
-        header('Location: index.php');
-        exit;
-    }*/
-
-    $aRespuestas = [
-        'usuario' => '',
-        'password' => ''
-    ];
-    
-    $entradaOK = true;
-    
-    if(isset($_REQUEST['login'])){    
-        
-        if (validacionFormularios::comprobarAlfaNumerico($_REQUEST['usuario'], 8, 4, 1) 
-                && validacionFormularios::comprobarAlfaNumerico($_REQUEST['password'], 8, 4, 1)) {
-            $entradaOK = false;
-        }
-        else{
-            $oUsuarioValido = UsuarioPDO::validarUsuario($_REQUEST['usuario'], $_REQUEST['password']);
-            
-            if(!$oUsuarioValido){
-                $bEntradaOK = false;
+require_once 'core/validacionFormularios.php';
+require_once $aVistas[$_SESSION['paginaEnCurso']];
+if (isset($_REQUEST['cancelar'])) {
+    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    header('Location: index.php');
+    exit;
+}
+if (isset($_REQUEST['login'])) {
+    $entradaOk = true;
+    $buscaUsuarioPorCodigo = <<< sq2
+    select * from T01_Usuario where T01_CodUsuario=:codUsuario;
+sq2;
+//actualizacion usuario introducido
+    $actualizacionConexiones = <<< sq3
+    update T01_Usuario set T01_NumConexiones=T01_NumConexiones+1,T01_FechaHoraUltimaConexion=now() where T01_CodUsuario=:codUsuario;
+sq3;
+    try {
+        $miDB = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
+        //Comprobamos que el usuario no haya introducido inyeccion de codigo y los datos están correctos
+        $aErrores['usuario'] = validacionFormularios::comprobarAlfabetico($_REQUEST['usuario'], 8, 4, obligatorio: 1);
+        $aErrores['password'] = validacionFormularios::validarPassword($_REQUEST['password'], 8, 4, 1, obligatorio: 1);
+        foreach ($aErrores as $claveError => $mensajeError) {
+            if ($mensajeError != null) {
+                $entradaOk = false;
             }
         }
+        if ($entradaOk) {
+            $queryConsultaPorCodigo = $miDB->prepare($buscaUsuarioPorCodigo);
+            $queryConsultaPorCodigo->bindParam(':codUsuario', $_REQUEST['usuario']);
+            $queryConsultaPorCodigo->execute();
+            $oUsuario = $queryConsultaPorCodigo->fetchObject();
+            //Comprobación de contraseña correcta
+            if (!UsuarioPDO::validarUsuario($_REQUEST['usuario'], $_REQUEST['password'])) {
+                $entradaOk = false;
+            }
+        }
+//   si no se ha pulsado iniciar sesion le pedimos que muestre el formulario de inicio
+    } catch (PDOException $excepcion) {
+        echo 'Error: ' . $excepcion->getMessage() . "<br>";
+        echo 'Código de error: ' . $excepcion->getCode() . "<br>";
+    } finally {
+        unset($miDB);
     }
-    else{
-        $entradaOK = false;
+    if ($entradaOk) {
+        $_SESSION['FechaHoraUltimaConexionAnterior'] = $oUsuario->T01_FechaHoraUltimaConexion;
+        try {
+            $miDB = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
+            //actualizamos el usuario
+            $queryActualizacion = $miDB->prepare($actualizacionConexiones);
+            $queryActualizacion->bindParam(":codUsuario", $oUsuario->T01_CodUsuario);
+            $queryActualizacion->execute();
+            //Volvemos a buscar el usuario para actualizar el objeto usuario
+            $queryConsultaPorCodigo = $miDB->prepare($buscaUsuarioPorCodigo);
+            $queryConsultaPorCodigo->bindParam(':codUsuario', $_REQUEST['usuario']);
+            $queryConsultaPorCodigo->execute();
+            $oUsuario = $queryConsultaPorCodigo->fetchObject();
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+        } finally {
+            unset($miDB);
+        }
+        //Establecemos una nueva cookie para el idioma y utlizaremos el metodo time al cual le sumaremos 1800 segundos(media hora)
+        //Introducimos el usuario en la sesion
+        $_SESSION['user208DWESLoginLogoff'] = $oUsuario;
+        $_SESSION['paginaEnCurso'] = 'inicioprivado';
+        header("Location: index.php");
     }
-    
-    if($entradaOK){
-            $aRespuestas['usuario'] = $_REQUEST['usuario'];
-            $aRespuestas['password'] = $_REQUEST['password'];
-        
-                $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-            
-            header('Location: index.php');
-            exit;
-    }
-    require_once $aVistas['layout'];
+}
+
+require_once $aVistas['layout'];

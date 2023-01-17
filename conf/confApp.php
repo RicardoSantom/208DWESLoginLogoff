@@ -25,10 +25,10 @@ $aControladores = [
         "borrarcuenta" => "controller/cBorrarCuenta.php"
     ];
     $aVistas = [
-        "layout" => "view/Layout.php",
+        "layout" => "view/Layout.php",        
+        "iniciopublico" => "view/vInicioPublico.php",
         "inicioprivado" => "view/vInicioPrivado.php",
         "login" => "view/vLogin.php",
-        "iniciopublico" => "view/vInicioPublico.php",
         "wip" => "view/vWIP.php",
         "error" => "view/vError.php",
         "detalle" => "view/vDetalle.php",

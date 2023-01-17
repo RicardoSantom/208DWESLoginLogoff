@@ -16,19 +16,21 @@ class Usuario {
     private $codUsuario;
     private $password;
     private $descUsuario;
-    private $numAccesos;
+    private $numConexiones;
     private $fechaHoraUltimaConexion;
     private $fechaHoraUltimaConexionAnterior;
     private $perfil;
+    private $imagenUsuario;
 
-    function __construct($codUsuario, $password, $descUsuario, $numAccesos, $fechaHoraUltimaConexion, $fechaHoraUltimaConexionAnterior, $perfil) {
+    function __construct($codUsuario, $password, $descUsuario, $numConexiones, $fechaHoraUltimaConexion, $fechaHoraUltimaConexionAnterior, $perfil,$imagenUsuario) {
         $this->codUsuario = $codUsuario;
         $this->password = $password;
         $this->descUsuario = $descUsuario;
-        $this->numAccesos = $numAccesos;
+        $this->numConexiones = $numConexiones;
         $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
         $this->fechaHoraUltimaConexionAnterior = $fechaHoraUltimaConexionAnterior;
         $this->perfil = $perfil;
+        $this->imagenUsuario = $imagenUsuario;
     }
 
     public function getCodUsuario() {
@@ -86,5 +88,23 @@ class Usuario {
     public function setPerfil($perfil): void {
         $this->perfil = $perfil;
     }
+    
+    public function getNumConexiones() {
+        return $this->numConexiones;
+    }
+
+    public function getImagenUsuario() {
+        return $this->imagenUsuario;
+    }
+
+    public function setNumConexiones($numConexiones): void {
+        $this->numConexiones = $numConexiones;
+    }
+
+    public function setImagenUsuario($imagenUsuario): void {
+        $this->imagenUsuario = $imagenUsuario;
+    }
+
+
 
 }

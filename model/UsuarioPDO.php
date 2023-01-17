@@ -17,7 +17,9 @@ class UsuarioPDO implements UsuarioDB {
         $oDatos = $oResultado->fetchObject();
 
         if ($oDatos) {
-            return new Usuario($oDatos->T01_CodUsuario, $oDatos->T01_Password, $oDatos->T01_DescUsuario, $oDatos->T01_NumConexiones, $oDatos->T01_FechaHoraUltimaConexion, null, $oDatos->T01_Perfil);
+            return new Usuario($oDatos->T01_CodUsuario, $oDatos->T01_Password, $oDatos->T01_NumConexiones,
+                    $oDatos->T01_DescUsuario,$oDatos->T01_FechaHoraUltimaConexion , 
+                    null, $oDatos->T01_Perfil,$oDatos->T01_ImagenUsuario);
         }
         /*
          * Si no existe, devuelve false.
