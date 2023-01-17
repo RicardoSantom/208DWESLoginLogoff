@@ -61,7 +61,6 @@ sq3;
         } finally {
             unset($miDB);
         }
-        //Establecemos una nueva cookie para el idioma y utlizaremos el metodo time al cual le sumaremos 1800 segundos(media hora)
         //Introducimos el usuario en la sesion
         $_SESSION['user208DWESLoginLogoff'] = $oUsuario;
         $_SESSION['paginaEnCurso'] = 'inicioprivado';

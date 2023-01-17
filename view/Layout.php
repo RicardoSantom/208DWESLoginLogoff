@@ -16,7 +16,7 @@ require_once $aVistas[$_SESSION['paginaEnCurso']];
     <p>|</p>
     <a href="../../../208DWESproyectoDWES/index.php" id="enlaceSecundario"  title="Enlace a Index DWES">Index DWES</a>
     <p>|</p>
-    <div>Esta página pretende emular a: <a href="https://www.elganso.com/es/" id="ganso" target="_blank" title="Enlace a página web El Ganso">"El Ganso"</a></div>
+    <div>Esta página <strong>pretende</strong> emular a: <a href="https://www.elganso.com/es/" id="ganso" target="_blank" title="Enlace a página web El Ganso">"El Ganso"</a></div>
 </footer>
 </body>
 </html>

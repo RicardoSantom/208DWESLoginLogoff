@@ -1,5 +1,4 @@
 <?php
-$_SESSION['paginaEnCurso']='iniciopublico';
 if(isset($_REQUEST['iniciarsesion'])){
     $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso']='login';
