@@ -6,7 +6,7 @@
  */
 class DBPDO implements DB {
     /**
-     * @author 
+     * @author Ricardo Santiago Tomé - RicardoSantom en Github <https://github.com/RicardoSantom>
      * @return Object $oResultado Guarda el resultado de la ejecución y resultado
      * recogio por una sentencia mysql.
      * @param String $sentenciaSQL Sentencia en lenguaje SQL

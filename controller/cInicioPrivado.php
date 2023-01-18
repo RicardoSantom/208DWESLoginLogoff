@@ -18,4 +18,16 @@ if (isset($_REQUEST['detalle'])) {
     header("Location:index.php");
     exit;
 }
+/**
+ *  Meter la session del usuario en un array de variables 
+ */
+$objectUsuario = $_SESSION['user208DWESLoginLogoff'];
+
+$aInicioPrivado = [
+    'codUsuario' => $objectUsuario->get_codUsuario(),
+    'descUsuario' => $objectUsuario->get_descUsuario(),
+    'numConexiones' => $objectUsuario->get_numConexiones(),
+    'fechaHoraUltimaConexionAnterior' => $objectUsuario->get_fechaHoraUltimaConexionAnterior(),
+    'perfil' => $objectUsuario->get_perfil()
+];
 require_once $aVistas['layout'];

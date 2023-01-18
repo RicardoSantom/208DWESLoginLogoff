@@ -18,7 +18,6 @@ sq2;
 sq3;
     try {
         $miDB = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
-        //Comprobamos que el usuario no haya introducido inyeccion de codigo y los datos están correctos
         $aErrores['usuario'] = validacionFormularios::comprobarAlfabetico($_REQUEST['usuario'], 8, 4, obligatorio: 1);
         $aErrores['password'] = validacionFormularios::validarPassword($_REQUEST['password'], 8, 4, 1, obligatorio: 1);
         foreach ($aErrores as $claveError => $mensajeError) {
@@ -27,6 +26,7 @@ sq3;
             }
         }
         if ($entradaOk) {
+            $conexionAnterior = $oUsuario->T01_FechaHoraUltimaConexion;
             $queryConsultaPorCodigo = $miDB->prepare($buscaUsuarioPorCodigo);
             $queryConsultaPorCodigo->bindParam(':codUsuario', $_REQUEST['usuario']);
             $queryConsultaPorCodigo->execute();
@@ -44,7 +44,7 @@ sq3;
         unset($miDB);
     }
     if ($entradaOk) {
-        $_SESSION['FechaHoraUltimaConexionAnterior'] = $oUsuario->T01_FechaHoraUltimaConexion;
+        $_SESSION['FechaHoraUltimaConexionAnterior'] = $conexionAnterior;
         try {
             $miDB = new PDO(DSN, NOMBREUSUARIO, PASSWORD);
             //actualizamos el usuario
@@ -61,6 +61,7 @@ sq3;
         } finally {
             unset($miDB);
         }
+        $oUsuario2 = new Usuario($oUsuario->T01_CodUsuario, $oUsuario->T01_Password, $oUsuario->T01_DescUsuario, $oUsuario->T01_NumConexiones, $conexionAnterior);
         //Introducimos el usuario en la sesion
         $_SESSION['user208DWESLoginLogoff'] = $oUsuario;
         $_SESSION['paginaEnCurso'] = 'inicioprivado';
