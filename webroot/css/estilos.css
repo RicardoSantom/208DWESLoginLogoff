@@ -10,12 +10,12 @@ body{
     width: 100vw;
     height: 100%;
 }
-#headerInicioPublico,#headerId{
+#headerInicioPublico{
     text-align: center;
     width: 100%;
     height: 3.5rem;
 }
-#headerInicioPublico p,#haderID p{
+#headerInicioPublico p{
     background-color: #344079;
     font-family: 'LatoBold';
     color: white;
@@ -23,8 +23,8 @@ body{
     padding-bottom: 2px;
     font-size: 13px;
 }
-#headerInicioPublico h1,#headerId h1{
-    background-color: #fbfaf8;
+#headerInicioPublico h1{
+    /*background-color: #fbfaf8;*/
     font-family: 'LatoItalic';
     font-weight: bold;
     font-size: 30px;
@@ -39,6 +39,9 @@ body{
 #hbger{
     display: none;
 }
+.listaInternaDesplegable,.listaInternaDesplegable li{
+    color: #ff6666;
+}
 label{
     text-align: center;
     font-family: monospace;
@@ -47,12 +50,12 @@ label{
     color:  #003333;
 }
 .divNav{
-    width: 20%;
     position: relative;
     overflow: hidden;
-    height: 60%;
     background: white;
     opacity: 1;
+    width: 300px;
+    height: 600px;
 }
 #labelInicioPublico{
     position: absolute;
@@ -79,11 +82,18 @@ label{
 }
 .menu{
     list-style: none;
-    width: 300px;
-    height: 600px;
     position: relative;
     left: -100%;
     transition: all 0.5s ease;
+    top: 10%;
+    background-color: white;
+    height: 600px;
+}
+.menu li{
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-family: 'LatoLight';
+    color: #516D99;
 }
 #formInicioPublico{
     display: flex;
@@ -133,6 +143,7 @@ input:checked ~ ul{
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
     top: 100px;
     background-color: #f0f2f1;
+    padding-bottom: 6rem;
 }
 .diapositivaInterior {
     position: relative;

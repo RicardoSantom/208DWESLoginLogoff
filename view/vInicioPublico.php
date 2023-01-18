@@ -19,16 +19,24 @@
     <body>
         <header id="headerInicioPublico">
             <p>Aplicación multicapa y orientada a objetos - 2ºDAW IES Los Sauces - Vista actual: Inicio Público</p>
-            <h1>Aplicación LoginLogoff</h1>
+            <h1>Aplicación LoginLogoff</h1>  
             <div class="divNavContenedor">
                 <div class="divNav">
                     <input type="checkbox" name="rd" id="hbger">
                     <label id="labelInicioPublico" for="hbger"></label>
                     <ul class="menu">
-                        <li>Elemento 1</li>
-                        <li>Elemento 2</li>
-                        <li>Elemento 3</li>
-                        <li>Elemento 4</li>
+                        <h1>Login Logoff</h1>
+                        <ul class="listaInternaDesplegable">
+                            <h2>EN DESARROLLO</h2>
+                            <li>Vista registro</li>
+                            <li>Vista password</li>
+                            <li>Vista borrar</li>
+                        </ul>
+                        <h2>NOVEDADES</h2>
+                        <li>Vista Inicio Público</li>
+                        <li>Vista Login</li>
+                        <li>Vista Inicio Privado</li>
+                        <li>Vista Detalle</li>
                     </ul>
                 </div>
                 <form id="formInicioPublico" method="post">
@@ -44,7 +52,7 @@
                        name="slide" aria-hidden="true" hidden="" checked="checked">
                 <div class="diapositivaItem">
                     <label>Ficheros LoginLogoff</label>
-                    <img src="./webroot/images/Ficheros.png">
+                    <img src="./webroot/images/RelacionDeFicheros.png">
                 </div>
                 <input class="diapositivaAbrir" type="radio" id="diapositiva2" 
                        name="slide" aria-hidden="true" hidden="">

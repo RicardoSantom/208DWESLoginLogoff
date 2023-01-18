@@ -17,24 +17,30 @@ body{
     font-family: 'LatoRegular';
     width: 100vw;
     height: 100%;
-}#headerId{
+}
+#headerId{
     text-align: center;
     width: 100%;
     height: 3.5rem;
-}#haderID p{
+}
+#haderID p{
     background-color: #344079;
     font-family: 'LatoBold';
     color: white;
     padding-top: 5px;
     padding-bottom: 2px;
     font-size: 13px;
-}#headerId h1{
-    background-color: #fbfaf8;
+}
+#headerId h1{
+    /*background-color: #fbfaf8;*/
     font-family: 'LatoItalic';
     font-weight: bold;
     font-size: 30px;
 }
-divNavContenedor{
+#headerId h3{
+    color:  #83839a;
+}
+/*.divNavContenedor{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -52,19 +58,19 @@ label{
     color:  #003333;
 }
 .divNav{
-    width: 20%;
     position: relative;
     overflow: hidden;
-    height: 60%;
     background: white;
     opacity: 1;
+    width: 300px;
+    height: 600px;
 }
 #labelInicioPublico{
     position: absolute;
     width: 50px;
     height: 40px;
     display: block;
-    /*background: gray;*/
+    //background: gray;
     border-radius: 5px;
     top: 25px;
     left: 18px;
@@ -82,54 +88,95 @@ label{
     box-shadow: 0 8px 0 #344079,
         0 16px 0 #344079;
 }
-menu{
+.menu{
     list-style: none;
-    width: 300px;
-    height: 600px;
     position: relative;
     left: -100%;
     transition: all 0.5s ease;
+    top: 10%;
+    background-color: white;
+    height: 600px;
 }
+.menu li{
+    margin-top: 30px;
+    font-size: 25px;
+    font-family: 'LatoLight';
+    color: #516D99;
+}
+#formInicioPublico{
+    display: flex;
+    align-items: flex-end;
+    width: 15%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#fieldsetInicioPublico{
+    border: none;
+    position: relative;
+}*/
 #formLogin fieldset{
-     display: flex;
+    display: flex;
     height: 300px;
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     border: none;
+    flex-wrap: wrap;
+}
+#formLogin{
+     position: relative;
+    padding-bottom: 2rem;
+    display: flex;
 }
 .divRegistroCancelar{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    color:  #83839a;
 }
 .divRegistroCancelar input{
     width: 500px;
-    height: 30px;
+    height: 38px;
 }
 #password,.inicarSesionLogin input:nth-child(1){
     margin-top: 20px;
 }
+/*.divRegistroCancelar:last-of-type{
+    width: 600px;
+}*/
+.divRegistroCancelar:last-of-type input{
+    width: 300px;
+}
 #login,#registrarse{
     background-color: #344079;
     color: white;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 22px;
 }
 .divRegistroCancelar h2{
+    display: flex;
     padding: 10px;
-    width: 80%;
-    margin: 20px auto;
+    width: 120%;
+    margin: 20px 20px;
     border-bottom: dashed 1px #00295A;
     opacity: 1;
     font-size: 22px !important;
-    font-weight: 300 !important;                    
+    font-weight: 300 !important;
+    text-align: center;
+    justify-content: center;
+}
+#cancelar{
+    background-color: #d9c7c7;
+    font-weight: bold;
+    font-size: 22px;
+    color: #344079;
 }
 #divIdioma{
-    background-color: #cccccc;
-    height: 300px;
+     position: relative;
+    background-color: #e7e7e7;
+    height: 270px;
     width: 100%;
     display: flex;
     justify-content: center;

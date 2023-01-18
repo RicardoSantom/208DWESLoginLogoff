@@ -20,19 +20,41 @@
     <body>
         <header id="headerId">
             <h1>Aplicación LoginLogoff</h1>
+            <h3>Vista Login</h3>
+            <div class="divNavContenedor">
+                <div class="divNav">
+                    <input type="checkbox" name="rd" id="hbger">
+                    <label id="labelInicioPublico" for="hbger"></label>
+                    <ul class="menu">
+                        <h1>Login Logoff</h1>
+                        <ul class="listaInternaDesplegable">
+                            <h2>EN DESARROLLO</h2>
+                            <li>Vista registro</li>
+                            <li>Vista password</li>
+                            <li>Vista borrar</li>
+                        </ul>
+                        <h2>NOVEDADES</h2>
+                        <li>Vista Inicio Público</li>
+                        <li>Vista Login</li>
+                        <li>Vista Inicio Privado</li>
+                        <li>Vista Detalle</li>
+                    </ul>
+                </div>
         </header>
         <form id="formLogin" method="post">
             <fieldset>
                 <div class="divRegistroCancelar">
-                    <h2>YA SOY UN USUARIO REGISTRADO</h2><br>
+                    <h2>YA SOY UN USUARIO REGISTRADO</h2>
+                    <h5 style="opacity: 0;">--------</h5>
                     <input type="text" name="usuario" placeholder="Usuario" class="entradadatos"/>
                     <input type="password" name="password" placeholder="Contraseña" id="password" class="entradadatos" />
                     <div class="inicarSesionLogin"><input type="submit" id="login" value="Iniciar Sesión" name="login"></div>
                 </div>
                 <div class="divRegistroCancelar">
-                    <h2>SOY NUEVO EN LOGINLOGOFF</h2><br>
-                    <p>Si pulsa el botón de registro le redirigiremos</p>
-                    <p>a nuestro formulario de registro.</p>
+                    <h2>SOY NUEVO EN APLICACIÓN LOGINLOGOFF</h2>
+                    <h5><strong>REGÍSTRESE HOY!!! ES IGUAL DE GRATIS QUE MAÑANA</strong></h5>
+                    <p>Si pulsa el botón <strong>"registrarse"</strong> le redirigiremos a nuestro </p>
+                    <p><strong>formulario de registro.</strong></p>
                     <div class="inicarSesionLogin"><input type="submit" id="registrarse" value="Registrarse" name="registrarse"></div>
                     <div class="inicarSesionLogin"><input type="submit" id="cancelar" value="Cancelar" name="cancelar"></div>
                 </div>
@@ -41,10 +63,10 @@
         <div id="divIdioma">
             <h3>En desarrollo mostrar aquí lista desplegable para seleccionar idioma</h3>
              <!--<select name="listaDesplegable" value="<?php
-        /* if (isset($_REQUEST['listaDesplegable'])) {
-          echo $_REQUEST['listaDesplegable'];
-          } */
-        ?>"
+            /* if (isset($_REQUEST['listaDesplegable'])) {
+              echo $_REQUEST['listaDesplegable'];
+              } */
+            ?>"
          <option value="null">Elija una opcion :</option>
          <option value="es">Español</option>
          <option value="pt">Portugués</option>
