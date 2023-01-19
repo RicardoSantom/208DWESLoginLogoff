@@ -23,7 +23,7 @@
         <main>
             <article>
                 <h3>Enunciado: Login Correcto, bienvenida a usuario e información.</h3>
-                 <?php echo"Bienvenido ".$_SESSION['user208DWESLoginLogoff']->T01_DescUsuario;?>
+                 <?php echo"Bienvenido ".$_SESSION['user208DWESLoginLogoff'];?>
                 <form name="ejercicio" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <input type="submit" id="detalle" value="Detalle" name="detalle">
                     <input type="submit" id="salir" value="Salir" name="salir">

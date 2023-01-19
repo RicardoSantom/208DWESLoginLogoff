@@ -25,7 +25,9 @@
                 <div class="divNav">
                     <input type="checkbox" name="rd" id="hbger">
                     <label id="labelInicioPublico" for="hbger"></label>
+                    <input type="checkbox"  name="br" id="brClose">
                     <ul class="menu">
+                        <label id="labelClose" for="brClose">X</label>
                         <h1>Login Logoff</h1>
                         <ul class="listaInternaDesplegable">
                             <h2>EN DESARROLLO</h2>
@@ -40,12 +42,13 @@
                         <li>Vista Detalle</li>
                     </ul>
                 </div>
+            </div>
         </header>
         <form id="formLogin" method="post">
             <fieldset>
                 <div class="divRegistroCancelar">
                     <h2>YA SOY UN USUARIO REGISTRADO</h2>
-                    <h5 style="opacity: 0;">--------</h5>
+                    <h5 style="opacity: 0 !important;">--------</h5>
                     <input type="text" name="usuario" placeholder="Usuario" class="entradadatos"/>
                     <input type="password" name="password" placeholder="Contraseña" id="password" class="entradadatos" />
                     <div class="inicarSesionLogin"><input type="submit" id="login" value="Iniciar Sesión" name="login"></div>

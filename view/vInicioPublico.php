@@ -20,11 +20,15 @@
         <header id="headerInicioPublico">
             <p>Aplicación multicapa y orientada a objetos - 2ºDAW IES Los Sauces - Vista actual: Inicio Público</p>
             <h1>Aplicación LoginLogoff</h1>  
+
+                
             <div class="divNavContenedor">
                 <div class="divNav">
                     <input type="checkbox" name="rd" id="hbger">
                     <label id="labelInicioPublico" for="hbger"></label>
+                    <input type="checkbox"  name="br" id="brClose">
                     <ul class="menu">
+                        <label id="labelClose" for="brClose">X</label>
                         <h1>Login Logoff</h1>
                         <ul class="listaInternaDesplegable">
                             <h2>EN DESARROLLO</h2>
@@ -41,7 +45,7 @@
                 </div>
                 <form id="formInicioPublico" method="post">
                     <fieldset id="fieldsetInicioPublico">
-                        <input type="submit"  id="iniciarsesion" value="" name="iniciarsesion">
+                        <input type="submit" alt="Página login" id="iniciarsesion" value="" name="iniciarsesion">
                     </fieldset>
                 </form>
             </div>

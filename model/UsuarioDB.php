@@ -13,5 +13,4 @@ interface UsuarioDB {
     //put your code here
     public static function validarUsuario($codUsuario,$password);
     public static function registrarUltimaConexion($oUsuarioValido);
-    
 }
