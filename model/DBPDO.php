@@ -25,8 +25,10 @@ class DBPDO implements DB {
         } catch (PDOException $excepcion) {
             $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
             //Si hay errores nos informa con un mensaje
-            $_SESSION['error']= $excepcion->getMessage();
+           // $_SESSION['error']= $excepcion->getMessage();
+            //$_SESSION['paginaEnCurso'] = 'error';
             //Y nos devuelve al index
+            echo $excepcion->getMessage();
             header('Location: index.php');
             exit;
         } finally {

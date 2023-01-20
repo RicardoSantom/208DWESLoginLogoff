@@ -35,7 +35,7 @@
                  * @since 15/01/2023
                  */
                 if (!empty($_SESSION)) {
-                    echo "<table><caption>\$_SESSION'</caption><tr><th>Clave</th><th>Valor</th></tr>";
+                    echo "<table><caption>\$_SESSION</caption><tr><th>Clave</th><th>Valor</th></tr>";
                     foreach ($_SESSION as $clave => $valor) {
                         echo "<tr>";
                         echo "<td><strong>$clave</strong></td>";
@@ -70,15 +70,44 @@
                 ?>
                 <table>
                     <thead>
+                    <caption>Datos Objeto Usuario</caption>
                         <tr>
-                            <td>Atributo</td>
-                            <td>Valor</td>
+                            <th>Atributo</th>
+                            <th>Valor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th>Fecha Hora Ultima Conexion Anterior</th>
-                            <th><?php echo $_SESSION['user208DWESLoginLogoff']->getFechaHoraUltimaConexionAnterior() ?></th>
+                            <td>Código usuario</td>
+                            <td><?php echo $_SESSION['user208DWESLoginLogoff']->getCodUsuario()?></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><?php echo $_SESSION['user208DWESLoginLogoff']->getPassword() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Descripción usuario</td>
+                            <td><?php echo $_SESSION['user208DWESLoginLogoff']->getDescUsuario() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Número conexiones</td>
+                            <td><?php echo $_SESSION['user208DWESLoginLogoff']->getNumConexiones() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Fecha Hora Ultima Conexion</td>
+                            <td><?php print_r ($_SESSION['user208DWESLoginLogoff']->getFechaHoraUltimaConexion()) ?></td>
+                        </tr>
+                        <tr>
+                            <td>Fecha Hora Ultima Conexion Anterior</td>
+                            <td><?php echo $_SESSION['user208DWESLoginLogoff']->getFechaHoraUltimaConexionAnterior() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Perfil</td>
+                            <td><?php echo $_SESSION['user208DWESLoginLogoff']->getPerfil() ?></td>
+                        </tr>
+                        <tr>
+                            <td>Imagen usuario</td>
+                            <td><?php echo $_SESSION['user208DWESLoginLogoff']->getImagenUsuario() ?></td>
                         </tr>
                     </tbody>
                 </table>

@@ -76,8 +76,4 @@ class UsuarioPDO implements UsuarioDB {
         DBPDO::ejecutarConsulta($actualizar);
         return $oUsuario;*/
     }
-       public  function toString(){
-        return "Codigo: ".$this->codUsuario."<br>"."Descripcion: ".$this->descUsuario."<br>"."Numero de conexiones: ".$this->numConexiones."<br>"."Perfil: ".$this->perfil;
-
-    }
 }
