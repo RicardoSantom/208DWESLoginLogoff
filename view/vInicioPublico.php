@@ -19,9 +19,7 @@
     <body>
         <header id="headerInicioPublico">
             <p>Aplicación multicapa y orientada a objetos - 2ºDAW IES Los Sauces - Vista actual: Inicio Público</p>
-            <h1>Aplicación LoginLogoff</h1>  
-
-                
+            <h1>Aplicación LoginLogoff</h1>                  
             <div class="divNavContenedor">
                 <div class="divNav">
                     <input type="checkbox" name="rd" id="hbger">

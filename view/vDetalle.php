@@ -42,6 +42,9 @@
                         if (is_object($valor)) {
                             echo '<td><table><th>Clave</th><th>valor</th>';
                             foreach ($valor as $c => $v) {
+                                if($_SESSION['user208DWESLoginLogoff']){
+                                    $_SESSION['user208DWESLoginLogoff']->getDescUsuario();
+                                }
                                 echo "<tr><th>$c</th>";
                                 echo "<td>$v</td></tr>";
                             }

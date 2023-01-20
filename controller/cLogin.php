@@ -9,8 +9,8 @@
  */
 //Inclusión librería de validación
 require_once 'core/validacionFormularios.php';
-//Inclusión array con valor para cargar la página en curso
-require_once $aVistas[$_SESSION['paginaEnCurso']];
+//Inclusión array con valor para cargar la página en curso.Funcionalidad en revisión.
+//require_once $aVistas[$_SESSION['paginaEnCurso']];
 if (isset($_REQUEST['cancelar'])) {
     //Si se ha pulsado el botón cancelar, se guarda la página en curso como página anterior
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
@@ -53,9 +53,9 @@ if (isset($_REQUEST['login'])) {
 //   si no se ha pulsado iniciar sesion le pedimos que muestre el formulario de inicio
     if ($entradaOk) {
         UsuarioPDO::registrarUltimaConexion($oLogin);
-        $_SESSION['userDAW208LoginLogoff'] = $oLogin;
+        $_SESSION['user208DWESLoginLogoff'] = $oLogin;
         $_SESSION['paginaEnCurso'] = 'inicioprivado';
-        header("Location: index.php");
+        //header('Location: index.php');
     }
 }
 require_once $aVistas['layout'];

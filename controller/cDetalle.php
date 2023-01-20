@@ -5,7 +5,7 @@
  */
 if (isset($_REQUEST['volverPrograma'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    header("Location:index.php");
+    header("Location: index.php");
     exit;
 }
 $_SESSION['paginaAnterior']='inicioprivado';

@@ -80,7 +80,7 @@ label{
 #labelInicioPublico{
     position: absolute;
     width: 80px;
-    height: 180px;
+    height: 80px;
     display: block;
     border-radius: 5px;
     top: -40px;
@@ -98,6 +98,7 @@ label{
     left: 4px;
     box-shadow: 0 8px 0 #344079,
         0 16px 0 #344079;
+    margin: 10px;
 }
 .menu{
     list-style: none;
@@ -108,6 +109,12 @@ label{
     background-color: white;
     height: 600px;
     width: 300px;
+}
+.menu h1{
+    margin-bottom: 8px;
+}
+.menu h2{
+    margin-bottom: 5px;
 }
 .menu li{
     margin-bottom: 30px;

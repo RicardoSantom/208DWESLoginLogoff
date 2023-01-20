@@ -23,7 +23,25 @@
         <main>
             <article>
                 <h3>Enunciado: Login Correcto, bienvenida a usuario e información.</h3>
-                 <?php echo"Bienvenido ".$_SESSION['user208DWESLoginLogoff'];?>
+                <?php
+                echo"Bienvenido " . $_SESSION['user208DWESLoginLogoff']->getDescUsuario();
+                //comprobamos el numero de conexiones si es mayor a 1 tambien mostramos la fecha y hora de la ultima conexion
+                if ($_SESSION['user208DWESLoginLogoff']->getNumConexiones() > 1) {
+                    echo"Ultimo inicio de sesión: " . $_SESSION['user208DWESLoginLogoff']->getFechaHoraUltimaConexionAnterior();
+                    ?>
+                    </p>
+                    <p>
+                        <?php
+                        //Mostramos el numero de conexiones
+                        echo"Te has conectado " . $_SESSION['user208DWESLoginLogoff']->getNumConexiones() . " veces";
+                    } else {
+                        ?>
+                    </p>
+                    <p>
+                        <?php
+                        echo 'Es la primera vez que te conectas';
+                    }
+                    ?>
                 <form name="ejercicio" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <input type="submit" id="detalle" value="Detalle" name="detalle">
                     <input type="submit" id="salir" value="Salir" name="salir">
@@ -53,13 +71,6 @@
                   $_COOKIE=['cookieIdioma']['es'];
                   break;
                   } */
-                //comprobamos el numero de conexiones si es mayor a 1 tambien mostramos la fecha y hora de la ultima conexion
-                if ($_SESSION['user208DWESLoginLogoff']->T01_NumConexiones > 1) {
-                    echo"<p>Ultimo inicio de sesión: " . $_SESSION['FechaHoraUltimaConexionAnterior'] . "</p>";
-                    echo"<p>Te has conectado " . $_SESSION['user208DWESLoginLogoff']->T01_NumConexiones . " veces</p>";
-                } else {
-                    echo '<p>Es la primera vez que te conectas</p><br>';
-                }
                 ?>
             </article>
         </main>
