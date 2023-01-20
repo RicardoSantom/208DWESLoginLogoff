@@ -22,13 +22,15 @@ class Usuario {
     private $perfil;
     private $imagenUsuario;
 
-    function __construct($codUsuario, $password, $descUsuario, $numConexiones, $fechaHoraUltimaConexionAnterior) {
+    function __construct($codUsuario, $password, $descUsuario, $numConexiones, $fechaHoraUltimaConexionAnterior,$perfil,$imagenUsuario) {
         $this->codUsuario = $codUsuario;
         $this->password = $password;
         $this->descUsuario = $descUsuario;
         $this->numConexiones = $numConexiones;
         $this->fechaHoraUltimaConexion = new DateTime("now");
         $this->fechaHoraUltimaConexionAnterior = $fechaHoraUltimaConexionAnterior;
+        $this->perfil=$perfil;
+        $this->imagenUsuario= $this->imagenUsuario;
     }
 
     public function getCodUsuario() {

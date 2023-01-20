@@ -23,8 +23,9 @@ class DBPDO implements DB {
             //Devolución del resultado de la consulta
             return $oResultado;
         } catch (PDOException $excepcion) {
+            $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
             //Si hay errores nos informa con un mensaje
-            echo $excepcion->getMessage();
+            $_SESSION['error']= $excepcion->getMessage();
             //Y nos devuelve al index
             header('Location: index.php');
             exit;

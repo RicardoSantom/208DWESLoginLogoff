@@ -28,7 +28,7 @@ class UsuarioPDO implements UsuarioDB {
 
             if (is_object($oDatos)) {
                 $oUsuario = new Usuario($oDatos->T01_CodUsuario, $oDatos->T01_Password, 
-                        $oDatos->T01_DescUsuario,$oDatos->T01_NumConexiones, $oDatos->T01_FechaHoraUltimaConexion);
+                        $oDatos->T01_DescUsuario,$oDatos->T01_NumConexiones, $oDatos->T01_FechaHoraUltimaConexion,$oDatos->T01_Perfil,$oDatos->T01_ImagenUsuario);
                 return $oUsuario;
             }
             /*
@@ -76,5 +76,8 @@ class UsuarioPDO implements UsuarioDB {
         DBPDO::ejecutarConsulta($actualizar);
         return $oUsuario;*/
     }
+       public  function toString(){
+        return "Codigo: ".$this->codUsuario."<br>"."Descripcion: ".$this->descUsuario."<br>"."Numero de conexiones: ".$this->numConexiones."<br>"."Perfil: ".$this->perfil;
 
+    }
 }

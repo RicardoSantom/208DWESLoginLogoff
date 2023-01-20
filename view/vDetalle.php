@@ -42,9 +42,6 @@
                         if (is_object($valor)) {
                             echo '<td><table><th>Clave</th><th>valor</th>';
                             foreach ($valor as $c => $v) {
-                                if($_SESSION['user208DWESLoginLogoff']){
-                                    $_SESSION['user208DWESLoginLogoff']->getDescUsuario();
-                                }
                                 echo "<tr><th>$c</th>";
                                 echo "<td>$v</td></tr>";
                             }
@@ -61,7 +58,33 @@
                     printf('<h3>La variable superglobal $_SESSION está vacía</h3>');
                 }
 
-                /**
+                /*echo "<table><caption>\$_SESSION'</caption><tr><th>Clave</th><th>Valor</th></tr>";
+                foreach ($_SESSION['user208DWESLoginLogoff']['Usuario Object'] as $claveObjeto => $valorObjeto) {
+                    echo "<tr>";
+                    echo "<td><strong>$claveObjeto</strong></td>";
+                    echo "<td>" . $valorObjeto . "</td>";
+                }
+                echo "</tr>";
+                echo "</table>";*/
+                
+                ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Atributo</td>
+                            <td>Valor</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Fecha Hora Ultima Conexion Anterior</th>
+                            <th><?php echo $_SESSION['user208DWESLoginLogoff']->getFechaHoraUltimaConexionAnterior() ?></th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <?php function imprimirTablaVariablesSuperGlobales($aVariableSuperglobal, $sNombreVariableSuperGlobal) {
+                    /**
                  * Esta función recibe dos parámetros, con ellos construye una tabla, evalua si el primer parámetro recibido
                  * es null o está vacío; en caso de que así sea, devuelve un mensaje impreso por pantalla declarando que
                  * no hay nada que mostrar de esta variable superglobal, si no, construye una fila por cada pareja de variable - valor 
@@ -77,8 +100,6 @@
                  * @param string $sNombreVariableSuperGlobal nombre de la variable superglobal abriendo comillas seguidas por la secuencia
                  * de escape \ y a continuación el identificador de la variable supeglobal y para finalizar, cerramos con comillas.
                  */
-                function imprimirTablaVariablesSuperGlobales($aVariableSuperglobal, $sNombreVariableSuperGlobal) {
-
                     printf('<table class="tablaGlobales"><caption>%s</caption>', $sNombreVariableSuperGlobal);
                     if (is_null($aVariableSuperglobal) || empty($aVariableSuperglobal)) {
                         printf('<thead><th  style="border:none;color:red;text-align:center;">La variable superglobal %s está vacía</th></thead>', $sNombreVariableSuperGlobal);
