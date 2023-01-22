@@ -9,8 +9,6 @@
  */
 //Inclusión librería de validación
 require_once 'core/validacionFormularios.php';
-//Inclusión array con valor para cargar la página en curso.Funcionalidad en revisión.
-//require_once $aVistas[$_SESSION['paginaEnCurso']];
 if (isset($_REQUEST['cancelar'])) {
     //Si se ha pulsado el botón cancelar, se guarda la página en curso como página anterior
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];

@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/png" sizes="96x96" href="../webroot/images/favicon-96x96.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="webroot/css/estilos.css"/>
         <link rel="stylesheet" href="webroot/css/estilosVistaDetalle.css"/>
         <title>Vista Detalle</title>
     </head>
@@ -35,17 +36,12 @@
                  * @since 15/01/2023
                  */
                 if (!empty($_SESSION)) {
-                    echo "<table><caption>\$_SESSION</caption><tr><th>Clave</th><th>Valor</th></tr>";
+                    echo "<table class='tablaGlobales'><caption>\$_SESSION</caption><tr><th>Clave</th><th>Valor</th></tr>";
                     foreach ($_SESSION as $clave => $valor) {
                         echo "<tr>";
                         echo "<td><strong>$clave</strong></td>";
                         if (is_object($valor)) {
-                            echo '<td><table><th>Clave</th><th>valor</th>';
-                            foreach ($valor as $c => $v) {
-                                echo "<tr><th>$c</th>";
-                                echo "<td>$v</td></tr>";
-                            }
-                            echo"</table></td>";
+                            echo "<td>Los datos del objeto Usuario guardados en \$_SESSION se muestran en la tabla siguiente.</td>";
                         } else {
                             echo "<td>" . $valor . "</td>";
                         }
@@ -56,21 +52,11 @@
                     echo "</br>";
                 } else {
                     printf('<h3>La variable superglobal $_SESSION está vacía</h3>');
-                }
-
-                /*echo "<table><caption>\$_SESSION'</caption><tr><th>Clave</th><th>Valor</th></tr>";
-                foreach ($_SESSION['user208DWESLoginLogoff']['Usuario Object'] as $claveObjeto => $valorObjeto) {
-                    echo "<tr>";
-                    echo "<td><strong>$claveObjeto</strong></td>";
-                    echo "<td>" . $valorObjeto . "</td>";
-                }
-                echo "</tr>";
-                echo "</table>";*/
-                
+                }                
                 ?>
-                <table>
+                <table class="tablaGlobales">
                     <thead>
-                    <caption>Datos Objeto Usuario</caption>
+                    <caption>Datos Objeto Usuario en $_SESSION</caption>
                         <tr>
                             <th>Atributo</th>
                             <th>Valor</th>
@@ -95,7 +81,7 @@
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion</td>
-                            <td><?php print_r ($_SESSION['user208DWESLoginLogoff']->getFechaHoraUltimaConexion()) ?></td>
+                            <td><?php echo date_format($_SESSION['user208DWESLoginLogoff']->getFechaHoraUltimaConexion(),'Y-m-d H:i:s') ?></td>
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion Anterior</td>

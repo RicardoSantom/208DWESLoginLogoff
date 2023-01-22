@@ -19,3 +19,4 @@ if (isset($_REQUEST['detalle'])) {
     exit;
 }
 require_once $aVistas['layout'];
+

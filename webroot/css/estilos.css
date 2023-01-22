@@ -9,6 +9,11 @@ body{
     font-family: 'LatoRegular';
     width: 100vw;
     height: 100%;
+    min-height: 950px;
+}
+header h1,header h2,header h3{
+    width: 80%;
+    margin: 0 auto;
 }
 #headerInicioPublico{
     text-align: center;
@@ -24,7 +29,6 @@ body{
     font-size: 13px;
 }
 #headerInicioPublico h1{
-    /*background-color: #fbfaf8;*/
     font-family: 'LatoBlackItalic';
     font-weight: bold;
     font-size: 30px;
@@ -80,12 +84,11 @@ label{
 #labelInicioPublico{
     position: absolute;
     width: 80px;
-    height: 80px;
+    height: 180px;
     display: block;
     border-radius: 5px;
-    top: -40px;
+    top: -30px;
     left: 18px;
-    padding-top: 50px;
 }
 #labelInicioPublico::before{
     content: "";
@@ -96,18 +99,18 @@ label{
     background-color: #344079;
     position: absolute;
     left: 4px;
+    top: 70px;
     box-shadow: 0 8px 0 #344079,
         0 16px 0 #344079;
-    margin: 10px;
 }
 .menu{
     list-style: none;
     position: relative;
     left: -100%;
     transition: all 0.85s ease-in-out;
-    top: 9%;
+    top: 25%;
     background-color: white;
-    height: 600px;
+    height: 800px;
     width: 300px;
 }
 .menu h1{
@@ -139,12 +142,16 @@ label{
 .listaInternaDesplegable,.listaInternaDesplegable li{
     color: #ff6666;
 }
+header a{
+    text-underline-offset: 0.5em;
+    font-family: 'LatoLight';
+    color: #516D99;
+}
 #formInicioPublico{
-    display: flex;
-    align-items: flex-end;
-    width: 15%;
-    flex-direction: row;
-    justify-content: space-evenly;
+    height: 3rem;
+    position: absolute;
+    top: 30px;
+    right: 60px;
 }
 #fieldsetInicioPublico{
     border: none;
@@ -354,4 +361,5 @@ footer {
     z-index: 20;
     color:#666666;
     background-color: white;
+    z-index: 100 !important;
 }

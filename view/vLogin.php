@@ -21,28 +21,34 @@
         <header id="headerId">
             <h1>Aplicación LoginLogoff</h1>
             <h3>Vista Login</h3>
-            <div class="divNavContenedor">
-                <div class="divNav">
-                    <input type="checkbox" name="rd" id="hbger">
-                    <label id="labelInicioPublico" for="hbger"></label>
-                    <input type="checkbox"  name="br" id="brClose">
-                    <ul class="menu">
-                        <label id="labelClose" for="brClose">X</label>
-                        <h1>Login Logoff</h1>
-                        <ul class="listaInternaDesplegable">
-                            <h2>EN DESARROLLO</h2>
-                            <li>Vista registro</li>
-                            <li>Vista password</li>
-                            <li>Vista borrar</li>
-                        </ul>
-                        <h2>NOVEDADES</h2>
-                        <li>Vista Inicio Público</li>
-                        <li>Vista Login</li>
-                        <li>Vista Inicio Privado</li>
-                        <li>Vista Detalle</li>
-                    </ul>
-                </div>
-            </div>
+            <input type="checkbox" name="rd" id="hbger">
+            <label id="labelInicioPublico" for="hbger"></label>
+            <input type="checkbox"  name="br" id="brClose">
+            <ul class="menu">
+                <label id="labelClose" for="brClose">X</label>
+                <h1>Login Logoff</h1>
+                <ul class="listaInternaDesplegable">
+                    <h2>EN DESARROLLO</h2>
+                    <li>Vista registro</li>
+                    <li>Vista password</li>
+                    <li>Vista borrar</li>
+                </ul>
+                <h2>NOVEDADES</h2>
+                <li>Vista Inicio Público</li>
+                <li>Vista Login</li>
+                <li>Vista Inicio Privado</li>
+                <li>Vista Detalle</li>
+                <h2>TECNOLOGÍAS USADAS</h2>
+                <li><a href="webroot/images/imagenPHP.png" target="blank">PHP</a></li>
+                <li><a href="webroot/images/imagenMySQL.png" target="blank">MySQL</a></li>
+                <li><a href="webroot/images/imagenHTML.png" target="blank">HTML 5</a></li>
+                <li><a href="webroot/images/imagenCSS.png" target="blank">CSS 3</a></li>
+            </ul>
+            <form id="formInicioPublico" method="post">
+                <fieldset id="fieldsetInicioPublico">
+                    <input type="submit" alt="Página login" id="iniciarsesion" value="" name="iniciarsesion">
+                </fieldset>
+            </form>
         </header>
         <form id="formLogin" method="post">
             <fieldset>
