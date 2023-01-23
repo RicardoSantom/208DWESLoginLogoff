@@ -45,13 +45,14 @@ if (isset($_REQUEST['login'])) {
     if ($entradaOk) {
         //Comprobado ya el formato correcto de los dos input, se pasan como parámetro a la función validarUsuario        
         $oLogin = UsuarioPDO::validarUsuario($_REQUEST['usuario'], $_REQUEST['password']);
-        UsuarioPDO::registrarUltimaConexion($oLogin);
+        
         //Si no se ha podido validar el usuario, se pone el booleano a false
         if (is_null($oLogin)) {
             $entradaOk = false;
         }
     }
     if ($entradaOk) {
+        UsuarioPDO::registrarUltimaConexion($oLogin);
         $_SESSION['user208DWESLoginLogoff'] = $oLogin;
         $_SESSION['paginaEnCurso'] = 'inicioprivado';
         header('Location: index.php');

@@ -36,8 +36,6 @@ require_once $aVistas[$_SESSION['paginaEnCurso']];
     <p>|</p>
     <a href="http://daw208.ieslossauces.es/doc/curriculumRicardo.pdf"  title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
     <p>|</p>
-    <a href="../../../208DWESproyectoDWES/index.php" id="enlaceSecundario"  title="Enlace a Index DWES">Index DWES</a>
-    <p>|</p>
     <div>Esta página <strong>pretende</strong> emular a: <a href="https://www.elganso.com/es/" id="ganso" target="_blank" title="Enlace a página web El Ganso">"El Ganso"</a></div>
 </footer>
 </body>

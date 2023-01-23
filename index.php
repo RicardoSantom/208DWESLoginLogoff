@@ -11,9 +11,10 @@
  * está guardado en la sesión.
  */
 //Inclusión de fichero configuración aplicación con arrays de controladores y vistas.
-require_once 'conf/confApp.php';
+require_once './conf/confApp.php';
 //Inicio de la sesión
 session_start();
+ob_start();
 //Condicional. Si no hay valor guardado en $_SESSION, le da el valor de página 
 //en curso =inicio publico
 if (!isset($_SESSION['paginaEnCurso'])) {
