@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description Este fichero es un controlador sobre la vista homónima cLogin.php
  * @author Ricardo Santiago Tomé <https://github.com/RicardoSantom>
@@ -12,6 +13,7 @@ require_once 'core/validacionFormularios.php';
 if (isset($_REQUEST['cancelar'])) {
     //Si se ha pulsado el botón cancelar, se guarda la página en curso como página anterior
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    $_SESSION['paginaEnCurso'] = 'iniciopublico';
     //Estableciendo index.php como página principal de acceso
     header('Location: index.php');
     exit;
@@ -43,17 +45,14 @@ if (isset($_REQUEST['login'])) {
     if ($entradaOk) {
         //Comprobado ya el formato correcto de los dos input, se pasan como parámetro a la función validarUsuario        
         $oLogin = UsuarioPDO::validarUsuario($_REQUEST['usuario'], $_REQUEST['password']);
+        UsuarioPDO::registrarUltimaConexion($oLogin);
+        $_SESSION['user208DWESLoginLogoff'] = $oLogin;
+        $_SESSION['paginaEnCurso'] = 'inicioprivado';
+        header('Location: index.php');
         //Si no se ha podido validar el usuario, se pone el booleano a false
         if (is_null($oLogin)) {
             $entradaOk = false;
         }
-    }
-//   si no se ha pulsado iniciar sesion le pedimos que muestre el formulario de inicio
-    if ($entradaOk) {
-        UsuarioPDO::registrarUltimaConexion($oLogin);
-        $_SESSION['user208DWESLoginLogoff'] = $oLogin;
-        $_SESSION['paginaEnCurso'] = 'inicioprivado';
-        //header('Location: index.php');
     }
 }
 require_once $aVistas['layout'];

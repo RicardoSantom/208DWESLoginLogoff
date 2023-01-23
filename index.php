@@ -12,8 +12,6 @@
  */
 //Inclusión de fichero configuración aplicación con arrays de controladores y vistas.
 require_once 'conf/confApp.php';
-//Inclusión de fichero de configuración de la base de datos.
-require_once 'conf/confDBPDO.php';
 //Inicio de la sesión
 session_start();
 //Condicional. Si no hay valor guardado en $_SESSION, le da el valor de página 
@@ -25,4 +23,3 @@ if (!isset($_SESSION['paginaEnCurso'])) {
 //en la sesión.
 require_once $aControladores[$_SESSION['paginaEnCurso']];
 require_once $aVistas[$_SESSION['paginaEnCurso']];
-?>

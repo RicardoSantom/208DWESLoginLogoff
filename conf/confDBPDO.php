@@ -10,7 +10,7 @@
 //Conexión en curso.
 define('DSN', 'mysql:host=192.168.1.77;dbname=DB208DWESLoginLogoff');
 define('NOMBREUSUARIO', 'user208DWESLoginLogoff');
-define('PASSWORD', 'paso');
+ define('PASSWORD', 'paso');
 /*
  * Declaración de variables e inicialización con los valores correctos 
  * para entorno de desarrollo virtualizado Ubuntu server en casa. Base de datos DB208DWESLoginLogoff

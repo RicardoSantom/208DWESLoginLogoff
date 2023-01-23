@@ -110,7 +110,7 @@ label{
     transition: all 0.85s ease-in-out;
     top: 25%;
     background-color: white;
-    height: 800px;
+    height: 950px;
     width: 300px;
 }
 .menu h1{
@@ -190,6 +190,7 @@ header a{
     top: 80px;
     background-color: #f0f2f1;
     padding-bottom: 6rem;
+    width: 90%;
 }
 .diapositivaInterior {
     position: relative;
