@@ -48,7 +48,7 @@
                name="slide" aria-hidden="true" hidden="">
         <div class="diapositivaItem">
             <label>Árbol de navegación LoginLogoff</label>
-            <img src="./webroot/images/ArbolDeNavegación.png">
+            <img src="./webroot/images/ArbolDeNavegación.png" alt="Árbol de navegación">
         </div>
         <label for="diapositiva3" class="diapositivaControl prev control-1">‹</label>
         <label for="diapositiva2" class="diapositivaControl next control-1">›</label>

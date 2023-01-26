@@ -7,13 +7,12 @@
  * @version 0.1
  * 
  */
-//Si se selecciona cerrar sesión, destruye la sesión y vuelve a la página de login.
+//Si se selecciona cerrar sesión, destruye la sesión y vuelve a la página de inicio público.
 if (isset($_REQUEST['salir'])) {
-    $_SESSION['paginaEnCurso'] = 'inicioPublico';
+    $_SESSION['paginaEnCurso'] = 'iniciopublico';
     $_SESSION['user208DWESLoginLogoff'] = null;
     session_destroy();
     header('Location:index.php');
-    exit;
 }
 //Si se selecciona detalle, navega hasta esa vista, la guarda como página en curso en la sesión y
 //establece inicioprivado como página anterior.

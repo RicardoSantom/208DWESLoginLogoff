@@ -16,7 +16,6 @@ if (isset($_REQUEST['cancelar'])) {
     $_SESSION['paginaEnCurso'] = 'iniciopublico';
     //Estableciendo index.php como página principal de acceso
     header('Location: index.php');
-    exit;
 }
 if (isset($_REQUEST['login'])) {
     //Si se ha pulsado el botón login
@@ -56,7 +55,6 @@ if (isset($_REQUEST['login'])) {
         $_SESSION['user208DWESLoginLogoff'] = $oLogin;
         $_SESSION['paginaEnCurso'] = 'inicioprivado';
         header('Location: index.php');
-        exit;
     }
 }
 require_once $aVistas['layout'];
